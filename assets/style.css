@@ -1,12 +1,51 @@
+/* General Styles */
 body {
-    background-color: #f0f0f0;
+    background-color: #1e1e1e; /* Dark background (VS Code Slate theme) */
+    color: #d4d4d4; /* Light gray text */
     font-family: Arial, sans-serif;
 }
 
-h1 {
-    color: #007acc;
+/* Header Styles */
+.page-header {
+    background-color: #004d00; /* Deep green header */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #008000; /* Bright green underline */
 }
 
-.page-header {
-    background-color: #004466;
+/* Headings */
+h1, h2, h3 {
+    color: #00ff00; /* Bright green for emphasis */
+}
+
+/* Links */
+a {
+    color: #00cc66; /* Softer green */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00ff99; /* Lighter green on hover */
+}
+
+/* Code Blocks */
+pre, code {
+    background-color: #002200; /* Very dark green */
+    color: #00ff99; /* Light green code text */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    background-color: #008000; /* Classic green */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #00b300; /* Lighter green on hover */
 }
