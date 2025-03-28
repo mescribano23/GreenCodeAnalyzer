@@ -1,44 +1,38 @@
 /* General Styles */
 body {
     background-color: #1e1e1e; /* Dark background (VS Code Slate theme) */
-    color: #d4d4d4; /* Light gray text */
     font-family: Arial, sans-serif;
 }
 
 /* Header Styles */
 .page-header {
-    background-color: #2f7327; /* Milder green header */
+    background-color: #2f7327; /* Deep green header */
     padding: 20px;
     text-align: center;
-    border-bottom: 3px solid #226e19; /* Softer green underline */
 }
 
 /* Headings */
 h1, h2, h3 {
-    color: #226e19; /* Subtle green for headings */
+    color: ##2f7327; 
 }
 
 /* Links */
 a {
-    color: #2f7327; /* Milder green for links */
+    color: #00cc66; /* Softer green */
     text-decoration: none;
-}
-
-a:hover {
-    color: #226e19; /* Darker green on hover */
 }
 
 /* Code Blocks */
 pre, code {
-    background-color: #002200; /* Very dark green */
-    color: #2f7327; /* Milder green code text */
+    background-color: #f5faf2; 
+    color: #2f7327;
     padding: 5px;
     border-radius: 5px;
 }
 
 /* Buttons */
 button {
-    background-color: #226e19; /* Soft green for buttons */
+    background-color: #008000; /* Classic green */
     color: #ffffff;
     border: none;
     padding: 10px 15px;
@@ -47,5 +41,5 @@ button {
 }
 
 button:hover {
-    background-color: #2f7327; /* Slightly lighter green on hover */
+    background-color: #58b848; /* Lighter green on hover */
 }
