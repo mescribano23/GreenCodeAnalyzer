@@ -53,4 +53,5 @@ This extension is a powerful tool for developers looking to improve the efficien
 
 
 
-<link rel="stylesheet" type="text/css" href="/assets/style.css">
+<link rel="stylesheet" type="text/css" href="{{ '/assets/style.css' | relative_url }}">
+
