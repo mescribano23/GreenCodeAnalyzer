@@ -7,38 +7,38 @@ body {
 
 /* Header Styles */
 .page-header {
-    background-color: #004d00; /* Deep green header */
+    background-color: #2f7327; /* Milder green header */
     padding: 20px;
     text-align: center;
-    border-bottom: 3px solid #008000; /* Bright green underline */
+    border-bottom: 3px solid #226e19; /* Softer green underline */
 }
 
 /* Headings */
 h1, h2, h3 {
-    color: #00ff00; /* Bright green for emphasis */
+    color: #226e19; /* Subtle green for headings */
 }
 
 /* Links */
 a {
-    color: #00cc66; /* Softer green */
+    color: #2f7327; /* Milder green for links */
     text-decoration: none;
 }
 
 a:hover {
-    color: #00ff99; /* Lighter green on hover */
+    color: #226e19; /* Darker green on hover */
 }
 
 /* Code Blocks */
 pre, code {
     background-color: #002200; /* Very dark green */
-    color: #00ff99; /* Light green code text */
+    color: #2f7327; /* Milder green code text */
     padding: 5px;
     border-radius: 5px;
 }
 
 /* Buttons */
 button {
-    background-color: #008000; /* Classic green */
+    background-color: #226e19; /* Soft green for buttons */
     color: #ffffff;
     border: none;
     padding: 10px 15px;
@@ -47,5 +47,5 @@ button {
 }
 
 button:hover {
-    background-color: #00b300; /* Lighter green on hover */
+    background-color: #2f7327; /* Slightly lighter green on hover */
 }
