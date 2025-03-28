@@ -1,6 +1,7 @@
 /* General Styles */
 body {
     background-color: #1e1e1e; /* Dark background (VS Code Slate theme) */
+    color: #D4D4D4;
     font-family: Arial, sans-serif;
 }
 
