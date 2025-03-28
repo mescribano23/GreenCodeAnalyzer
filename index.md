@@ -51,7 +51,3 @@ By integrating seamlessly with the VS Code interface, this extension ensures tha
 
 This extension is a powerful tool for developers looking to improve the efficiency of their Python code and make more sustainable software decisions.
 
-
-
-// <link rel="stylesheet" type="text/css" href="{{ '/assets/style.css' | relative_url }}">
-
