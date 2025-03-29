@@ -85,7 +85,7 @@ th, td {
   padding: 5px !important;
 }
 
-@media screen {
+@media screen and (max-width: 768px) {
   html, body {
     padding: 2px !important; /* Smaller padding on phones */
   }
