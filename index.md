@@ -16,7 +16,7 @@ GreenCodeAnalyzer is a **VS Code extension** designed to identify energy-ineffic
 
 | Rule    | Description | Libraries  | Impact     | Optimization |
 | ------- | ----------- | ---------- | -----------| ------------ |
-| Batch Matrix Multiplication   | When performing multiple matrix multiplications on a batch of matrices, use optimized batch operations rather than separate operations in loops. | NumPy, PyTorch and TensorFlow | GPUs thrive on parallel operations over large batches. Small, sequential operations waste cycles and keep the hardware active longer than necessary. Instead, batch matrix multiplication leverages vectorized execution.  | "NumPy: numpy.matmul(batch, matrices) 
+| Batch Matrix Multiplication   | When performing multiple matrix multiplications on a batch of matrices, use optimized batch operations rather than separate operations in loops. | <span class="numpy">`NumPy`</span>, <span class="pytorch">`PyTorch`</span>, <span class="tensorflow">`TensorFlow`</span> | GPUs thrive on parallel operations over large batches. Small, sequential operations waste cycles and keep the hardware active longer than necessary. Instead, batch matrix multiplication leverages vectorized execution.  | "NumPy: numpy.matmul(batch, matrices) 
 PyTorch: torch.bmm(batch_matrices1, batch_matrices2) 
 TensorFlow: tf.linalg.matmul(batch_matrices1, batch_matrices2)"|
 
@@ -72,3 +72,8 @@ By integrating seamlessly with the VS Code interface, this extension ensures tha
 
 This extension is a powerful tool for developers looking to improve the efficiency of their Python code and make more sustainable software decisions.
 
+<style>
+.numpy { color: #053b1b; }
+.pytorch { color: #051b3b; }
+.tensorflow { color: #153b05; }
+</style>
