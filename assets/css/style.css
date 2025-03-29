@@ -29,11 +29,3 @@ table, pre, code {
     margin: auto;
 }
 
-/* Improve mobile responsiveness */
-@media (max-width: 768px) {
-    .container, .page, body, .site-header, .site-footer {
-        max-width: 95%; /* Reduce margins on small screens */
-        padding: 0 10px;
-    }
-}
-
