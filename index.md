@@ -85,24 +85,34 @@ th, td {
   padding: 5px !important;
 }
 
-@media screen and (max-width: 768px) {
-  html, body {
-    padding: 2px !important; /* Smaller padding on phones */
-  }
-
+/* Desktop: Narrow content to 70%, keep table at 100% */
+@media screen and (min-width: 769px) {
   .page-content, .inner, main {
-    max-width: 100% !important; /* Full width on phones */
+    max-width: 70% !important;
+    width: 70% !important;
+  }
+  table {
+    max-width: 100% !important; /* Still full width within 70% container */
+  }
+  th, td {
+    padding: 5px !important;
+  }
+}
+
+/* Phone: Full width for everything */
+@media screen and (max-width: 768px) {
+  html, body, .page-content, .inner, main, table {
     width: 100% !important;
+    max-width: 100% !important;
     padding: 2px !important;
   }
-
   table {
-    font-size: 14px !important; /* Slightly smaller text */
+    font-size: 14px !important;
+    overflow-x: auto !important;
   }
-
   th, td {
-    padding: 3px !important; /* Smaller padding in cells */
-    min-width: 50px !important; /* Prevent columns from collapsing too much */
+    padding: 3px !important;
+    min-width: 40px !important; /* Slightly smaller for phones */
   }
 }
 </style>
