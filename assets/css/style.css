@@ -3,35 +3,42 @@
 
 @import "{{ site.theme }}";
 
-/* Consistent container styling */
-.container {
-    max-width: 85%;
-    margin: 0 auto;  /* More explicit centering than just 'auto' */
-    padding: 10px 20px;  /* Consistent padding */
-}
-
-/* Body styling */
+/* Reset default browser margins and set small margins */
 body {
-    margin: 0;  /* Remove default browser margins */
-    padding: 10px 20px;  /* Match container padding */
+    margin: 5px;          /* Small margin around entire page */
+    padding: 5px;         /* Small padding inside body */
 }
 
-/* Content area styling */
+/* Main container with smaller margins */
+.container {
+    max-width: 95%;       /* Wider content area (smaller margins) */
+    margin: 0 auto;       /* Center the container */
+    padding: 5px 10px;    /* Small padding: 5px top/bottom, 10px left/right */
+}
+
+/* Page content */
 .page {
-    max-width: 85%;
-    margin: 0 auto;  /* Consistent centering */
-    padding: 10px 20px;  /* Consistent padding */
+    max-width: 95%;       /* Match container width */
+    margin: 0 auto;       /* Center it */
+    padding: 5px 10px;    /* Small consistent padding */
 }
 
-/* Header and footer styling */
+/* Header and footer */
 .site-header, .site-footer {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 10px 20px;  /* Consistent padding throughout */
+    max-width: 100%;      /* Full width */
+    margin: 0 auto;       /* Center */
+    padding: 5px 10px;    /* Small padding */
 }
 
-/* Optional: Ensure inner content stays within bounds */
-main, .content {
-    max-width: 85%;
-    margin: 0 auto;
+/* Tables specifically */
+table {
+    max-width: 95%;       /* Match site width */
+    margin: 0 auto;       /* Center the table */
+    padding: 5px 10px;    /* Small padding */
+    display: block;       /* Ensure centering works */
+}
+
+/* Table cells */
+td, th {
+    padding: 5px;         /* Small padding inside cells */
 }
