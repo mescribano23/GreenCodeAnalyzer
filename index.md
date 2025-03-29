@@ -37,6 +37,7 @@ GreenCodeAnalyzer is a **VS Code extension** designed to identify energy-ineffic
 | **Reduction Operations** | When performing a reduction operator on an array, tensor, or dataframe inside for loops. | `NumPy` `Pandas` `PyTorch` `TensorFlow` | Reduction operations to compute sums, means, or other aggregates are slow and have been optimized in libraries. | **NumPy**: <br> `np.sum`, `np.min`, `np.max` <br> **Pandas**: <br> `df['column'].sum()`, `df['column'].mean()`, `df.agg('sum')` <br> **PyTorch**: `torch.sum(tensor)`, `torch.mean(tensor)`, `torch.max(tensor)`, `torch.max(tensor)` <br> **TensorFlow**: `tf.reduce_sum(tensor)`, `tf.reduce_mean(tensor)`, `tf.reduce_max(tensor)` | 
 | **Redundant Model Re-Fitting** | Continuously calling `.fit()` on the same dataset multiple times without any changes in hyperparameters or data. | `SciKit-Learn` | Each `.fit()` call recreates internal data structures, incurring CPU/memory overhead (Pedregosa et al., 2011). | Re-use fitted models, or partial fit if iterative approaches are needed. |
 
+
 ## Visualization in VS Code
 
 The **GreenCodeAnalyzer** provides visual feedback in the VS Code editor using:
