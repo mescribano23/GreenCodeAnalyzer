@@ -62,7 +62,6 @@ html, body {
   padding: 5px !important; /* Small padding for breathing room */
   max-width: 100% !important;
   width: 100% !important;
-  background: #fff !important; /* White background, or match your content */
 }
 
 /* Widen and center content, remove grey background */
@@ -71,13 +70,12 @@ html, body {
   width: 100% !important;
   margin: 0 auto !important;
   padding: 5px !important;
-  background: #fff !important; /* Match body background */
 }
 
 /* Widen and center table */
 table {
-  max-width: 100% !important;
-  width: 100% !important;
+  max-width: 70% !important;
+  width: 70% !important;
   margin: 0 auto !important;
   padding: 5px !important;
   display: block !important;
@@ -87,11 +85,5 @@ table {
 /* Table cells */
 th, td {
   padding: 5px !important;
-}
-
-/* Center headings */
-h1, h2, h3, h4, h5, h6 {
-  text-align: center !important;
-  margin: 5px auto !important;
 }
 </style>
