@@ -18,8 +18,8 @@ GreenCodeAnalyzer is a **VS Code extension** designed to identify energy-ineffic
 | ------- | ----------- | ---------- | -----------| ------------ |
 | `batch_matrix_mult`                
 | When performing multiple matrix multiplications on a batch of matrices, use optimized batch operations rather than separate operations in loops. 
-| Numpy, PyTorch, TensorFlow
-| GPUs thrive on parallel operations over large batches. Small, sequential operations waste cycles and keep the hardware active longer than necessary. Instead, batch matrix multiplication leverages vectorized execution.             |
+| <span style="color:#053b1b;">NumPy</span>, <span style="color:#051b3b;">PyTorch</span>, <span style="color:#153b05;">TensorFlow</span>
+| GPUs thrive on parallel operations over large batches. Small, sequential operations waste cycles and keep the hardware active longer than necessary. Instead, batch matrix multiplication leverages vectorized execution.             | |
 
 | `broadcasting`                     | Normally, when you want to perform operations like addition and multiplication, you need to ensure that the operands' shapes match. Tiling can be used to match shapes but stores intermediate results.       | Broadcasting allows us to perform implicit tiling, which makes the code shorter and more memory efficient since we don’t need to store the result of the tiling operation.                         |
 
