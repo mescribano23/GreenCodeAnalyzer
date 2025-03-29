@@ -44,7 +44,6 @@ The **GreenCodeAnalyzer** provides visual feedback in the VS Code editor using:
 
 - **Colored gutter icons** next to affected lines to indicate inefficiencies.
 - **Hover tooltips** displaying rule descriptions and optimization suggestions.
-- **Status bar notifications** summarizing detected issues.
 
 By integrating seamlessly with the VS Code interface, this extension ensures that developers can quickly identify and fix inefficient code without leaving their workflow.
 
