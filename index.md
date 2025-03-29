@@ -16,25 +16,44 @@ GreenCodeAnalyzer is a **VS Code extension** designed to identify energy-ineffic
 
 | Rule                               | Description                                                     | Impact                                                 |
 | ---------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------ |
-| `batch_matrix_mult`                | Sequential matrix multiplications instead of batched operations | Missed hardware acceleration opportunities             |
-| `broadcasting`                     | Inefficient tensor operations that could use broadcasting       | Unnecessary memory allocations                         |
-| `calculating_gradients`            | Computing gradients when not needed for training                | Unnecessary computation overhead                       |
-| `chain_indexing`                   | Chained Pandas DataFrame indexing operations                    | Extra intermediate objects creation                    |
-| `conditional_operations`           | Element-wise conditional operations in loops                    | Inefficient branching and repeated calculations        |
-| `element_wise_operations`          | Element-wise operations in loops                                | Inefficient iteration instead of vectorized operations |
-| `excessive_gpu_transfers`          | Frequent CPU-GPU tensor transfers                               | High data movement overhead                            |
-| `excessive_training`               | Training loops without early stopping mechanisms                | Wasted computation after model convergence             |
-| `filter_operations`                | Manual filtering in loops instead of vectorized operations      | Increased CPU workload                                 |
-| `ignoring_inplace_ops`             | Operations that could use in-place variants                     | Unnecessary memory allocations                         |
-| `ineffective_array_caching`        | Recreating identical arrays inside loops                        | Redundant memory and CPU usage                         |
-| `inefficient_df_joins`             | Repeated merges or merges without DataFrame indexing            | High memory usage and increased computation time       |
+| `batch_matrix_mult`                | When performing multiple matrix multiplications on a batch of matrices, use optimized batch operations rather than separate operations in loops. | GPUs thrive on parallel operations over large batches. Small, sequential operations waste cycles and keep the hardware active longer than necessary. Instead, batch matrix multiplication leverages vectorized execution.             |
+
+| `broadcasting`                     | Normally, when you want to perform operations like addition and multiplication, you need to ensure that the operands' shapes match. Tiling can be used to match shapes but stores intermediate results.       | Broadcasting allows us to perform implicit tiling, which makes the code shorter and more memory efficient since we don’t need to store the result of the tiling operation.                         |
+
+| `calculating_gradients`            | When performing inference (i.e., forward pass without training or backpropagation), PyTorch by default tracks operations for autograd. TensorFlow will track them if specified to do so.                | Autograd graph tracking increases memory usage and computational cost. Disabling it during inference leads to faster execution, lower energy consumption, and reduced VRAM usage, which is particularly beneficial for GPUs and large models.                       |
+
+| `chain_indexing`                   | Chain indexing refers to when using df["one"]["two"], Pandas will see this operation as two events: call df["one"] first and call ["two"].                    | Performing many calls leads to excessive memory allocations and CPU-intensive Python interpreter overhead. This can result in slow and energy-consuming code.                    |
+
+| `conditional_operations`           | When performing a conditional operator on an array, tensor, or dataframe inside for loops.                    | Doing these operations in for loops leads to inefficient branching and repeated calculations.        |
+
+| `element_wise_operations`          | When performing an element-wise operator on an array, tensor, or dataframe inside for loops.                    | Doing these operations in for loops leads to inefficient branching and repeated calculations.        |
+
+| `excessive_gpu_transfers`          | Frequently moving data between CPU and GPU (e.g., calling .cpu() and then .cuda() repeatedly) without necessity.                               | This frequent transfer of data produces a high overhead.                            |
+
+| `excessive_training`               | Continuing to train a model beyond the point where validation metrics stop improving (i.e. without early stopping).                | Overtraining wastes GPU/CPU cycles with diminishing returns (Caruana et al., 2001).             |
+
+| `filter_operations`                | When performing a filter operator on an array, tensor, or dataframe inside for loops.                    | Doing these operations in for loops leads to inefficient branching and repeated calculations.        |
+
+| `ignoring_inplace_ops`             | Failing to use the in-place variants of PyTorch operations (e.g., add_, mul_, relu_) leads to additional memory allocations and higher overhead.                     | PyTorch (and most deep learning frameworks) stores tensors and gradients in memory. Creating new tensors for every operation triggers more frequent memory allocations, which consume additional CPU/GPU cycles and can cause extra garbage collection. This overhead translates to higher energy usage (Paszke et al., 2019).                        |
+
+| `ineffective_array_caching`        | Recreating the same arrays or tensors (e.g., repeating np.arange(0, n) in a loop) instead of storing or caching them.                        | Repeated creation allocates CPU/GPU cycles and memory, increasing energy usage (Breshears, 2015).                         |
+
+| `inefficient_df_joins`             | Performing repeated join operations on large DataFrames without indexing or merging strategies.            | Large repeated joins or merges can be extremely expensive, inflating CPU time and memory usage (McKinney, 2017).       |
+
 | `inefficient_iterrows`             | Inefficient row-by-row Pandas iterations                        | Python overhead for operations                         |
+
 | `large_batch_size_memory_swapping` | Batch sizes causing memory swapping                             | Excessive disk I/O and system slowdown                 |
+
 | `long_loop`                        | Long-running loops with excessive iterations                    | High CPU usage over time                               |
+
 | `recomputing_group_by`             | Repetitive group by operations on the same data                 | Redundant computation and memory usage                 |
+
 | `reduction_operations`             | Manual reduction operations using loops                         | Missed vectorization opportunities                     |
+
 | `redundant_model_refitting`        | Redundant retraining of models with unchanged data              | Wasteful recalculation                                 |
+
 | `storing_intermediate_results`     | Storing large intermediate tensors or arrays                    | Excessive memory usage and potential swapping          |
+
 | `unnecessary_precision`            | Using higher precision than needed for the task                 | Wasted computation and memory resources                |
 
 ## Visualization in VS Code
