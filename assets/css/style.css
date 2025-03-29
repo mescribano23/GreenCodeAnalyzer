@@ -2,3 +2,50 @@
 ---
 
 @import "{{ site.theme }}";
+
+/* Reset default margins and center everything */
+body {
+    margin: 5px auto;      /* Small margin, centered */
+    padding: 5px;          /* Small padding */
+    max-width: 95%;        /* Reduce margins by using most of the width */
+}
+
+/* Main content container */
+main {
+    max-width: 95%;        /* Match body width */
+    margin: 0 auto;        /* Center content */
+    padding: 5px 10px;     /* Small padding */
+}
+
+/* Center headings */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin: 5px auto;
+}
+
+/* Table-specific styling */
+table {
+    max-width: 95%;        /* Match site width */
+    margin: 0 auto;        /* Center the table */
+    padding: 5px;          /* Small padding */
+    display: block;        /* Ensure centering works */
+    border-collapse: collapse; /* Clean table appearance */
+}
+
+/* Table cells */
+th, td {
+    padding: 5px;          /* Small padding in cells */
+    text-align: left;      /* Default alignment, adjust as needed */
+}
+
+/* Ensure table headers are centered if desired */
+th {
+    text-align: center;
+}
+
+/* Override theme's container if it exists */
+.container {
+    max-width: 95%;        /* Override any theme defaults */
+    margin: 0 auto;
+    padding: 5px 10px;
+}
