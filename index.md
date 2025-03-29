@@ -16,7 +16,7 @@ GreenCodeAnalyzer is a **VS Code extension** designed to identify energy-ineffic
 
 | Rule    | Description | Libraries  | Impact     | Optimization |
 | ------- | ----------- | ---------- | -----------| ------------ |
-| Batch Matrix Multiplication   | When performing multiple matrix multiplications on a batch of matrices, use optimized batch operations rather than separate operations in loops. | <span style="color:#053b1b;">`NumPy`</span>, <span style="color:#051b3b;">`PyTorch`</span>, <span style="color:#153b05;">`TensorFlow`</span> | GPUs thrive on parallel operations over large batches. Small, sequential operations waste cycles and keep the hardware active longer than necessary. Instead, batch matrix multiplication leverages vectorized execution.  | |
+| Batch Matrix Multiplication   | When performing multiple matrix multiplications on a batch of matrices, use optimized batch operations rather than separate operations in loops. | <span class="numpy">NumPy</span>, <span class="pytorch">PyTorch</span>, <span class="tensorflow">TensorFlow</span> | GPUs thrive on parallel operations over large batches. Small, sequential operations waste cycles and keep the hardware active longer than necessary. Instead, batch matrix multiplication leverages vectorized execution.  | |
 
 | `broadcasting`                     | Normally, when you want to perform operations like addition and multiplication, you need to ensure that the operands' shapes match. Tiling can be used to match shapes but stores intermediate results.       | Broadcasting allows us to perform implicit tiling, which makes the code shorter and more memory efficient since we don’t need to store the result of the tiling operation.                         |
 
@@ -70,3 +70,8 @@ By integrating seamlessly with the VS Code interface, this extension ensures tha
 
 This extension is a powerful tool for developers looking to improve the efficiency of their Python code and make more sustainable software decisions.
 
+<style>
+.numpy { color: #053b1b; }
+.pytorch { color: #051b3b; }
+.tensorflow { color: #153b05; }
+</style>
