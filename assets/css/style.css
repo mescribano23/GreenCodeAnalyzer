@@ -2,25 +2,38 @@
 ---
 
 @import "{{ site.theme }}";
-/* Reduce overall page margins */
-.container {
-    max-width: 85%;  /* Adjust this value as needed (default is usually ~60%) */
-    margin: auto;  /* Centers the content */
+/* Set consistent margins and center all content */
+.container, .page, body {
+    max-width: 85%;  /* Adjust width to control margins */
+    margin: auto;  /* Ensures everything is centered */
 }
 
-/* Reduce margins for specific elements */
+/* Ensure body spans full width with uniform padding */
 body {
-    padding: 10px; /* Decrease the padding inside the body */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Adjust content area */
-.page {
-    max-width: 85%; /* Shrinks the width */
-    margin: auto; /* Centers the content */
-}
-
-/* Adjust header and footer width */
+/* Adjust header and footer to match the same width */
 .site-header, .site-footer {
-    max-width: 100%;
-    padding: 10px 20px; /* Adjust padding */
+    width: 85%;
+    margin: auto;
+    padding: 10px 0;
 }
+
+/* Ensure tables and large elements also match the width */
+table, pre, code {
+    max-width: 85%;
+    margin: auto;
+}
+
+/* Improve mobile responsiveness */
+@media (max-width: 768px) {
+    .container, .page, body, .site-header, .site-footer {
+        max-width: 95%; /* Reduce margins on small screens */
+        padding: 0 10px;
+    }
+}
+
