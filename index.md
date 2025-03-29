@@ -89,27 +89,20 @@ th, td {
   html, body {
     padding: 2px !important; /* Smaller padding on phones */
   }
-  
+
   .page-content, .inner, main {
-    max-width: 95% !important; /* Wider content on phones */
-    width: 95% !important;
+    max-width: 100% !important; /* Full width on phones */
+    width: 100% !important;
     padding: 2px !important;
   }
-  
+
   table {
-    max-width: 100% !important;
-    width: 100% !important;
-    font-size: 14px !important; /* Smaller text for better fit */
+    font-size: 14px !important; /* Slightly smaller text */
   }
-  
+
   th, td {
     padding: 3px !important; /* Smaller padding in cells */
-    word-wrap: break-word !important; /* Wrap long words */
-  }
-  
-  /* Ensure table columns don’t collapse too much */
-  th, td {
-    min-width: 50px; /* Minimum width to maintain readability */
+    min-width: 50px !important; /* Prevent columns from collapsing too much */
   }
 }
 </style>
