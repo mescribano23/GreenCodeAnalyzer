@@ -60,14 +60,14 @@ This extension is a powerful tool for developers looking to improve the efficien
 html, body {
   margin: 0 !important;
   padding: 5px !important; /* Small padding for breathing room */
-  max-width: 100% !important;
-  width: 100% !important;
+  max-width: 70% !important;
+  width: 70% !important;
 }
 
 /* Widen and center content, remove grey background */
 .page-content, .inner, main {
-  max-width: 100% !important;
-  width: 100% !important;
+  max-width: 70% !important;
+  width: 70% !important;
   margin: 0 auto !important;
   padding: 5px !important;
 }
