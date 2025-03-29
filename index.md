@@ -86,3 +86,13 @@ th, td {
   padding: 5px !important;
 }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var banner = document.getElementById("forkme_banner");
+    if (banner) {
+      banner.href = "https://github.com/ianjoshi/sustainablese-g1-green-shift-left";
+      banner.textContent = "View on GitHub"; 
+    }
+  });
+</script>
