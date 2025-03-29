@@ -3,42 +3,30 @@
 
 @import "{{ site.theme }}";
 
-/* Reset default browser margins and set small margins */
+/* Make sure all elements share the same width and are centered */
+.wrapper, .container, .page, body, .site-header, .site-footer {
+    max-width: 85%;  /* Consistent width across all elements */
+    margin: auto;  /* Ensures everything is centered */
+}
+
+/* Ensure body takes full width but centers content */
 body {
-    margin: 5px;          /* Small margin around entire page */
-    padding: 5px;         /* Small padding inside body */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Main container with smaller margins */
-.container {
-    max-width: 95%;       /* Wider content area (smaller margins) */
-    margin: 0 auto;       /* Center the container */
-    padding: 5px 10px;    /* Small padding: 5px top/bottom, 10px left/right */
+/* Adjust main content area */
+.main-content {
+    max-width: 85%;
+    margin: auto;
 }
 
-/* Page content */
-.page {
-    max-width: 95%;       /* Match container width */
-    margin: 0 auto;       /* Center it */
-    padding: 5px 10px;    /* Small consistent padding */
+/* Ensure tables, preformatted text, and code blocks match content width */
+table, pre, code {
+    max-width: 100%;  /* Prevents shrinking too much */
+    width: 100%;  /* Makes sure they take up the correct space */
+    margin: auto;
 }
 
-/* Header and footer */
-.site-header, .site-footer {
-    max-width: 100%;      /* Full width */
-    margin: 0 auto;       /* Center */
-    padding: 5px 10px;    /* Small padding */
-}
-
-/* Tables specifically */
-table {
-    max-width: 95%;       /* Match site width */
-    margin: 0 auto;       /* Center the table */
-    padding: 5px 10px;    /* Small padding */
-    display: block;       /* Ensure centering works */
-}
-
-/* Table cells */
-td, th {
-    padding: 5px;         /* Small padding inside cells */
-}
