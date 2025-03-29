@@ -56,5 +56,42 @@ This extension is a powerful tool for developers looking to improve the efficien
 .numpy { color: #053b1b; }
 .pytorch { color: #051b3b; }
 .tensorflow { color: #153b05; }
-body, table { max-width: 95% !important; margin: 0 auto !important; }
+/* Remove margins and widen body, remove grey background */
+html, body {
+  margin: 0 !important;
+  padding: 5px !important; /* Small padding for breathing room */
+  max-width: 100% !important;
+  width: 100% !important;
+  background: #fff !important; /* White background, or match your content */
+}
+
+/* Widen and center content, remove grey background */
+.page-content, .inner, main {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 5px !important;
+  background: #fff !important; /* Match body background */
+}
+
+/* Widen and center table */
+table {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 5px !important;
+  display: block !important;
+  background: #fff !important;
+}
+
+/* Table cells */
+th, td {
+  padding: 5px !important;
+}
+
+/* Center headings */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center !important;
+  margin: 5px auto !important;
+}
 </style>
