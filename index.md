@@ -56,4 +56,5 @@ This extension is a powerful tool for developers looking to improve the efficien
 .numpy { color: #053b1b; }
 .pytorch { color: #051b3b; }
 .tensorflow { color: #153b05; }
+body, table { max-width: 95% !important; margin: 0 auto !important; }
 </style>
