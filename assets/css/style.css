@@ -1,31 +1,34 @@
----
----
-
 @import "{{ site.theme }}";
-/* Set consistent margins and center all content */
-.container, .page, body {
-    max-width: 85%;  /* Adjust width to control margins */
-    margin: auto;  /* Ensures everything is centered */
-}
 
-/* Ensure body spans full width with uniform padding */
-body {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Adjust header and footer to match the same width */
-.site-header, .site-footer {
-    width: 85%;
-    margin: auto;
-    padding: 10px 0;
-}
-
-/* Ensure tables and large elements also match the width */
-table, pre, code {
+/* Consistent container styling */
+.container {
     max-width: 85%;
-    margin: auto;
+    margin: 0 auto;  /* More explicit centering than just 'auto' */
+    padding: 10px 20px;  /* Consistent padding */
 }
 
+/* Body styling */
+body {
+    margin: 0;  /* Remove default browser margins */
+    padding: 10px 20px;  /* Match container padding */
+}
+
+/* Content area styling */
+.page {
+    max-width: 85%;
+    margin: 0 auto;  /* Consistent centering */
+    padding: 10px 20px;  /* Consistent padding */
+}
+
+/* Header and footer styling */
+.site-header, .site-footer {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;  /* Consistent padding throughout */
+}
+
+/* Optional: Ensure inner content stays within bounds */
+main, .content {
+    max-width: 85%;
+    margin: 0 auto;
+}
