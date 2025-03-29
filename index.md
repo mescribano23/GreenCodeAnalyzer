@@ -74,10 +74,9 @@ html, body {
 
 /* Widen and center table */
 table {
-  max-width: 70% !important;
-  width: 70% !important;
+  max-width: 100% !important;
+  width: 100% !important;
   margin: 0 auto !important;
-  padding: 5px !important;
   display: block !important;
   background: #fff !important;
 }
