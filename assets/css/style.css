@@ -2,3 +2,25 @@
 ---
 
 @import "{{ site.theme }}";
+/* Reduce overall page margins */
+.container {
+    max-width: 85%;  /* Adjust this value as needed (default is usually ~60%) */
+    margin: auto;  /* Centers the content */
+}
+
+/* Reduce margins for specific elements */
+body {
+    padding: 10px; /* Decrease the padding inside the body */
+}
+
+/* Adjust content area */
+.page {
+    max-width: 85%; /* Shrinks the width */
+    margin: auto; /* Centers the content */
+}
+
+/* Adjust header and footer width */
+.site-header, .site-footer {
+    max-width: 100%;
+    padding: 10px 20px; /* Adjust padding */
+}
