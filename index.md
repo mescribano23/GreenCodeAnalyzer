@@ -85,18 +85,19 @@ th, td {
   padding: 5px !important;
 }
 
-/* Desktop: Narrow content to 70%, keep table at 100% */
+/* Desktop: Narrow content to 70%, table fits within */
 @media screen and (min-width: 769px) {
   .page-content, .inner, main {
     max-width: 70% !important;
     width: 70% !important;
   }
   table {
-    max-width: 100% !important; /* Still full width within 70% container */
-    width: 100% !important;
+    width: 100% !important; /* Fits within 70% container */
+    max-width: 100% !important;
   }
   th, td {
     padding: 5px !important;
+    max-width: 200px !important; /* Prevent overflow on laptops */
   }
 }
 
@@ -113,7 +114,8 @@ th, td {
   }
   th, td {
     padding: 3px !important;
-    min-width: 40px !important; /* Slightly smaller for phones */
+    max-width: 150px !important; /* Smaller cap for phones */
+    min-width: 40px !important;
   }
 }
 </style>
