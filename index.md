@@ -93,6 +93,7 @@ th, td {
   }
   table {
     max-width: 100% !important; /* Still full width within 70% container */
+    width: 100% !important;
   }
   th, td {
     padding: 5px !important;
