@@ -55,34 +55,50 @@ This extension is a powerful tool for developers looking to improve the efficien
 .numpy { color: #053b1b; }
 .pytorch { color: #051b3b; }
 .tensorflow { color: #153b05; }
-/* Remove margins and widen body, remove grey background */
+
+/* Reset all margins and ensure full width as base */
 html, body {
   margin: 0 !important;
-  padding: 5px !important; /* Small padding for breathing room */
-  max-width: 100% !important;
+  padding: 0 !important;
   width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-/* Widen and center content, remove grey background */
-.page-content, .inner, main {
-  max-width: 70% !important;
-  width: 70% !important;
+/* Ensure content containers are controlled */
+*, .page-content, .inner, main {
   margin: 0 auto !important;
   padding: 5px !important;
-}
-
-/* Widen and center table */
-table {
-  max-width: 100% !important;
   width: 100% !important;
-  margin: 0 auto !important;
-  display: block !important;
-  background: #fff !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-/* Table cells */
+/* Table styling */
+table {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  display: table !important;
+  overflow-x: auto !important;
+  background: #fff !important;
+  border-collapse: collapse !important;
+}
+
 th, td {
   padding: 5px !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  max-width: 200px !important; /* Cap cell width */
+  white-space: normal !important; /* Allow text to wrap naturally */
+}
+
+/* Style for code blocks within table cells */
+td code, th code {
+  white-space: pre-wrap !important; /* Wrap code lines */
+  word-break: break-all !important; /* Break long words */
+  display: inline-block !important; /* Ensure code respects cell width */
+  max-width: 100% !important; /* Fit within cell */
 }
 
 /* Desktop: Narrow content to 70%, table fits within */
@@ -92,12 +108,12 @@ th, td {
     width: 70% !important;
   }
   table {
-    width: 100% !important; /* Fits within 70% container */
+    width: 100% !important;
     max-width: 100% !important;
   }
   th, td {
     padding: 5px !important;
-    max-width: 200px !important; /* Prevent overflow on laptops */
+    max-width: 200px !important;
   }
 }
 
@@ -114,7 +130,7 @@ th, td {
   }
   th, td {
     padding: 3px !important;
-    max-width: 150px !important; /* Smaller cap for phones */
+    max-width: 150px !important;
     min-width: 40px !important;
   }
 }
