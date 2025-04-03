@@ -1,6 +1,6 @@
 ---
 title: GreenCodeAnalyzer
-description: This is the website for the VSCode extension GreenCodeAnalyzer.
+description: A VSCode Extension for Static Energy Analysis in Data Science
 ---
 
 **GreenCodeAnalyzer** is a static code analysis tool that identifies energy-inefficient patterns in Python code and suggests optimizations to improve energy consumption. By shifting energy efficiency concerns "left" (earlier) in the development process, developers can make more sustainable coding decisions from the start.
