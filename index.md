@@ -14,36 +14,38 @@ description: This is the website for the VSCode extension GreenCodeAnalyzer.
 
 ## Installation & Usage
 
-### Installation
+### Installing the Extension from VS Code Marketplace
 
-GreenCodeAnalyzer is available on the **VS Code Marketplace**. You can install it by:
+You can install the GreenCodeAnalyzer extension directly from the **VS Code Marketplace**:
 
-1. **Searching in VS Code**:
-   - Open **VS Code**.
-   - Go to the **Extensions** view (`Ctrl+Shift+X`).
-   - Search for **"GreenCodeAnalyzer"**.
-   - Click **Install**.
+1. Open VS Code
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or press `Ctrl+Shift+X`
+3. Search for "GreenCodeAnalyzer" and click on the install button.
 
-2. **Direct Installation**:
-   - Visit the [GreenCodeAnalyzer extension page](https://marketplace.visualstudio.com/items?itemName=KevinHoxha.GreenCodeAnalyzer).
-   - Click the **Install** button.
+Alternatively, you can install it from the [VS Code Marketplace website](https://marketplace.visualstudio.com/items?itemName=KevinHoxha.GreenCodeAnalyzer).
 
-### Usage
+### Using the Extension
 
-Once installed, follow these steps to analyze your Python code:
+Once installed, you can analyze your Python code for energy inefficiencies:
 
-1. Open a **Python file** in VS Code.
-2. Run the command **GreenCodeAnalyzer: Run Analyzer** from the Command Palette (`Ctrl+Shift+P`).
-3. The tool will analyze your code and display the [results](#result-visualization-in-vscode).
+1. Open a Python file in VS Code
+2. Use one of the following methods to run the analyzer:
+   - Press `Ctrl+Shift+P` to open the Command Palette, then type and select "GreenCodeAnalyzer: Run Analyzer"
+   - Right-click in the editor and select "Run GreenCodeAnalyzer" from the context menu
 
-To **clear annotations**, run the command **GreenCodeAnalyzer: Clear Gutters** from the Command Palette.
+The analysis results will appear as decorations in your code editor, highlighting potential energy inefficiencies with suggestions for improvement.
 
-#### Result Visualization in VS Code
+To clear the analysis markers:
 
-The **GreenCodeAnalyzer** provides visual feedback in the VS Code editor using:
+- Press `Ctrl+Shift+P` and select "GreenCodeAnalyzer: Clear Gutters"
+- Or right-click and select "Clear GreenCodeAnalyzer Gutters"
 
-- **Colored gutter icons** next to affected lines to indicate inefficiencies.
-- **Hover tooltips** displaying rule descriptions and optimization suggestions.
+#### Interpreting Results
+
+Each detected code smell includes:
+
+- A description of the energy inefficiency
+- A specific recommendation for optimization
 
 By integrating seamlessly with the VS Code interface, this extension ensures that developers can quickly identify and fix inefficient code without leaving their workflow.
 
