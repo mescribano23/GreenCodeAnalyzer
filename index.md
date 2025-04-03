@@ -84,155 +84,74 @@ By integrating seamlessly with the VS Code interface, this extension ensures tha
 This extension is a powerful tool for developers looking to improve the efficiency of their Python code and make more sustainable software decisions.
 
 <style>
-.numpy { color: #053b1b; }
-.pytorch { color: #051b3b; }
-.tensorflow { color: #153b05; }
-
-  /* Remove margins and widen body, remove grey background */
-html, body {
-  margin: 0 !important;
-  padding: 5px !important; /* Small padding for breathing room */
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
-/* Widen and center content, remove grey background */
-.page-content, .inner, main {
-  max-width: 70% !important;
-  width: 70% !important;
-  margin: 0 auto !important;
-  padding: 5px !important;
-}
-
-/* Widen and center table */
-table {
-  max-width: 100% !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-  display: block !important;
-  background: #fff !important;
-}
-
-/* Table cells */
-th, td {
-  padding: 5px !important;
-}
-
-td code, th code {
-  white-space: pre-wrap !important; /* Wrap code lines */
-  word-break: break-all !important; /* Break long words */
-  display: inline-block !important; /* Ensure code respects cell width */
-  max-width: 100% !important; /* Fit within cell */
-}
-
-td a {
- word-wrap: break-word !important;
- word-break: break-word !important; /* Force links to break inside cells */
- overflow-wrap: break-word !important;
-}
-
-/* Desktop: Narrow content to 70%, table fits within */
-@media screen and (min-width: 769px) {
-  .page-content, .inner, main {
-    max-width: 70% !important;
-    width: 70% !important;
-  }
+  /* Widen and center table */
   table {
-    width: 100% !important; /* Fits within 70% container */
     max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+    background: #fff !important;
+    word-wrap: break-word !important;  /* Ensure content wraps */
   }
+
+  /* Table cells */
   th, td {
     padding: 5px !important;
-    max-width: 200px !important; /* Prevent overflow on laptops */
+    word-wrap: break-word !important; /* Ensure content wraps */
+    overflow-wrap: break-word !important; /* Ensures long words break */
+    max-width: 200px !important; /* Prevent overflow */
   }
-}
 
-/* Phone: Full width for everything */
-@media screen and (max-width: 768px) {
-  html, body, .page-content, .inner, main, table {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 2px !important;
+  /* Links within table cells */
+  td a {
+    word-wrap: break-word !important;
+    word-break: break-word !important; /* Force links to break inside cells */
+    overflow-wrap: break-word !important;
   }
-  table {
-    font-size: 14px !important;
-    overflow-x: auto !important;
-  }
-  th, td {
-    padding: 3px !important;
-    max-width: 150px !important; /* Smaller cap for phones */
-    min-width: 40px !important;
-  }
-}
-  
-/* 
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
 
+  /* Code in table cells */
+  td code, th code {
+    white-space: pre-wrap !important;  /* Wrap code lines */
+    word-break: break-word !important; /* Break long words */
+    display: inline-block !important;  /* Ensure code respects cell width */
+    max-width: 100% !important; /* Fit within cell */
+  }
 
-*, .page-content, .inner, main {
-  margin: 0 auto !important;
-  padding: 5px !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
+  /* Desktop: Narrow content to 70%, table fits within */
+  @media screen and (min-width: 769px) {
+    .page-content, .inner, main {
+      max-width: 70% !important;
+      width: 70% !important;
+    }
+    table {
+      width: 100% !important; /* Fits within 70% container */
+      max-width: 100% !important;
+    }
+    th, td {
+      padding: 5px !important;
+      max-width: 200px !important; /* Prevent overflow on laptops */
+    }
+  }
 
-table {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 auto !important;
-  display: table !important;
-  overflow-x: auto !important;
-  background: #fff !important;
-  border-collapse: collapse !important;
-}
-
-th, td {
-  padding: 5px !important;
-  word-wrap: break-word !important;
-  overflow-wrap: break-word !important;
-  max-width: 200px !important;
-  white-space: normal !important;
-}
-
-@media screen and (min-width: 769px) {
-  .page-content, .inner, main {
-    max-width: 70% !important;
-    width: 70% !important;
+  /* Phone: Full width for everything */
+  @media screen and (max-width: 768px) {
+    html, body, .page-content, .inner, main, table {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 2px !important;
+    }
+    table {
+      font-size: 14px !important;
+      overflow-x: auto !important;
+    }
+    th, td {
+      padding: 3px !important;
+      max-width: 150px !important; /* Smaller cap for phones */
+      min-width: 40px !important;
+    }
   }
-  table {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  th, td {
-    padding: 5px !important;
-    max-width: 200px !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  html, body, .page-content, .inner, main, table {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 2px !important;
-  }
-  table {
-    font-size: 14px !important;
-    overflow-x: auto !important;
-  }
-  th, td {
-    padding: 3px !important;
-    max-width: 150px !important;
-    min-width: 40px !important;
-  }
-} */
 </style>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
