@@ -125,6 +125,12 @@ td code, th code {
   max-width: 100% !important; /* Fit within cell */
 }
 
+td a {
+ word-wrap: break-word !important;
+ word-break: break-word !important; /* Force links to break inside cells */
+ overflow-wrap: break-word !important;
+}
+
 /* Desktop: Narrow content to 70%, table fits within */
 @media screen and (min-width: 769px) {
   .page-content, .inner, main {
