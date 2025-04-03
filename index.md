@@ -34,11 +34,18 @@ Once installed, follow these steps to analyze your Python code:
 
 1. Open a **Python file** in VS Code.
 2. Run the command **GreenCodeAnalyzer: Run Analyzer** from the Command Palette (`Ctrl+Shift+P`).
-3. The tool will analyze your code and display results with:
-   - **Colored gutter icons** indicating energy inefficiencies based on severity.
-   - **Hover tooltips** with rule descriptions and optimization suggestions.
+3. The tool will analyze your code and display the [results](###result-visualization-in-vscode).
 
 To **clear annotations**, run the command **GreenCodeAnalyzer: Clear Gutters** from the Command Palette.
+
+### Result Visualization in VS Code
+
+The **GreenCodeAnalyzer** provides visual feedback in the VS Code editor using:
+
+- **Colored gutter icons** next to affected lines to indicate inefficiencies.
+- **Hover tooltips** displaying rule descriptions and optimization suggestions.
+
+By integrating seamlessly with the VS Code interface, this extension ensures that developers can quickly identify and fix inefficient code without leaving their workflow.
 
 ## Supported Rules
 
@@ -64,15 +71,6 @@ To **clear annotations**, run the command **GreenCodeAnalyzer: Clear Gutters** f
 | **Recomputing GroupBy Results** | Calling `.groupby()` multiple times on the same data with identical keys for similar aggregated statistics. | `Pandas` | Each `.groupby()` operation is expensive; re-running the same computation consumes extra CPU cycles (McKinney, 2017). | Compute all required statistics in a single pass (e.g., `agg(...)`) or store intermediate results for re-use. |
 | **Reduction Operations** | When performing a reduction operator on an array, tensor, or dataframe inside for loops. | `NumPy` `Pandas` `PyTorch` `TensorFlow` | Reduction operations to compute sums, means, or other aggregates are slow and have been optimized in libraries. | **NumPy**: <br> `np.sum`, `np.min`, `np.max` <br> **Pandas**: <br> `df['column'].sum()`, `df['column'].mean()`, `df.agg('sum')` <br> **PyTorch**: `torch.sum(tensor)`, `torch.mean(tensor)`, `torch.max(tensor)`, `torch.max(tensor)` <br> **TensorFlow**: `tf.reduce_sum(tensor)`, `tf.reduce_mean(tensor)`, `tf.reduce_max(tensor)` | 
 | **Redundant Model Re-Fitting** | Continuously calling `.fit()` on the same dataset multiple times without any changes in hyperparameters or data. | `SciKit-Learn` | Each `.fit()` call recreates internal data structures, incurring CPU/memory overhead (Pedregosa et al., 2011). | Re-use fitted models, or partial fit if iterative approaches are needed. |
-
-## Visualization in VS Code
-
-The **GreenCodeAnalyzer** provides visual feedback in the VS Code editor using:
-
-- **Colored gutter icons** next to affected lines to indicate inefficiencies.
-- **Hover tooltips** displaying rule descriptions and optimization suggestions.
-
-By integrating seamlessly with the VS Code interface, this extension ensures that developers can quickly identify and fix inefficient code without leaving their workflow.
 
 ## Known Issues
 
