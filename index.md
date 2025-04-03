@@ -117,6 +117,11 @@ This extension is a powerful tool for developers looking to improve the efficien
     max-width: 100% !important; /* Fit within cell */
   }
 
+   /* Align cells in the third row (Broadcasting) to the top */
+   table tr:nth-child(3) td {
+     vertical-align: top !important;
+   }
+
   /* Desktop: Narrow content to 70%, table fits within */
   @media screen and (min-width: 769px) {
     .page-content, .inner, main {
