@@ -34,11 +34,11 @@ Once installed, follow these steps to analyze your Python code:
 
 1. Open a **Python file** in VS Code.
 2. Run the command **GreenCodeAnalyzer: Run Analyzer** from the Command Palette (`Ctrl+Shift+P`).
-3. The tool will analyze your code and display the [results](###result-visualization-in-vscode).
+3. The tool will analyze your code and display the [results](#result-visualization-in-vscode).
 
 To **clear annotations**, run the command **GreenCodeAnalyzer: Clear Gutters** from the Command Palette.
 
-### Result Visualization in VS Code
+#### Result Visualization in VS Code
 
 The **GreenCodeAnalyzer** provides visual feedback in the VS Code editor using:
 
