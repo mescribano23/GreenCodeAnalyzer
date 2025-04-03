@@ -12,6 +12,34 @@ description: This is the website for the VSCode extension GreenCodeAnalyzer.
 - **Optimization Suggestions**: Provides specific recommendations to make code more energy-efficient
 - **Multiple Rule Detection**: Covers various energy-inefficient patterns common in data science and ML code
 
+## Installation & Usage
+
+### Installation
+
+GreenCodeAnalyzer is available on the **VS Code Marketplace**. You can install it by:
+
+1. **Searching in VS Code**:
+   - Open **VS Code**.
+   - Go to the **Extensions** view (`Ctrl+Shift+X`).
+   - Search for **"GreenCodeAnalyzer"**.
+   - Click **Install**.
+
+2. **Direct Installation**:
+   - Visit the [GreenCodeAnalyzer extension page](https://marketplace.visualstudio.com/items?itemName=KevinHoxha.GreenCodeAnalyzer).
+   - Click the **Install** button.
+
+### Usage
+
+Once installed, follow these steps to analyze your Python code:
+
+1. Open a **Python file** in VS Code.
+2. Run the command **GreenCodeAnalyzer: Run Analyzer** from the Command Palette (`Ctrl+Shift+P`).
+3. The tool will analyze your code and display results with:
+   - **Colored gutter icons** indicating energy inefficiencies based on severity.
+   - **Hover tooltips** with rule descriptions and optimization suggestions.
+
+To **clear annotations**, run the command **GreenCodeAnalyzer: Clear Gutters** from the Command Palette.
+
 ## Supported Rules
 
 | Rule    | Description | Libraries  | Impact     | Optimization |
@@ -37,7 +65,6 @@ description: This is the website for the VSCode extension GreenCodeAnalyzer.
 | **Reduction Operations** | When performing a reduction operator on an array, tensor, or dataframe inside for loops. | `NumPy` `Pandas` `PyTorch` `TensorFlow` | Reduction operations to compute sums, means, or other aggregates are slow and have been optimized in libraries. | **NumPy**: <br> `np.sum`, `np.min`, `np.max` <br> **Pandas**: <br> `df['column'].sum()`, `df['column'].mean()`, `df.agg('sum')` <br> **PyTorch**: `torch.sum(tensor)`, `torch.mean(tensor)`, `torch.max(tensor)`, `torch.max(tensor)` <br> **TensorFlow**: `tf.reduce_sum(tensor)`, `tf.reduce_mean(tensor)`, `tf.reduce_max(tensor)` | 
 | **Redundant Model Re-Fitting** | Continuously calling `.fit()` on the same dataset multiple times without any changes in hyperparameters or data. | `SciKit-Learn` | Each `.fit()` call recreates internal data structures, incurring CPU/memory overhead (Pedregosa et al., 2011). | Re-use fitted models, or partial fit if iterative approaches are needed. |
 
-
 ## Visualization in VS Code
 
 The **GreenCodeAnalyzer** provides visual feedback in the VS Code editor using:
@@ -46,6 +73,11 @@ The **GreenCodeAnalyzer** provides visual feedback in the VS Code editor using:
 - **Hover tooltips** displaying rule descriptions and optimization suggestions.
 
 By integrating seamlessly with the VS Code interface, this extension ensures that developers can quickly identify and fix inefficient code without leaving their workflow.
+
+## Known Issues
+
+- The extension only works with **Python files**.
+- Some rules may produce **false positives**, depending on the context of your code.
 
 ---
 
