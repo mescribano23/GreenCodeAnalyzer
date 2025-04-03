@@ -1,5 +1,6 @@
 ---
 title: GreenCodeAnalyzer
+subtitle: A VSCode Extension for Static Energy Analysis in Data Science
 description: A VSCode Extension for Static Energy Analysis in Data Science
 ---
 
